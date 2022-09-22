@@ -7,8 +7,8 @@ import org.openqa.selenium.support.FindBy;
 
 public class AuthenticationPopup extends PageObject {
 
-    @FindBy(xpath = "//div[@data-testid='authentication-modal']")
-    WebElement authPopup;
+    @FindBy(xpath = "//div[contains(text(),'Login')]")
+    WebElement loginHeader;
 
     @FindBy(xpath = "//input[@data-testid='email-phone-number-auth-input']")
     WebElement emailInput;
@@ -20,7 +20,7 @@ public class AuthenticationPopup extends PageObject {
     WebElement continueButton;
 
     public boolean isSighUpPopupVisible() {
-        return element(authPopup).isCurrentlyVisible();
+        return element(loginHeader).isCurrentlyVisible();
     }
 
     public void enterEmail(String email) {
